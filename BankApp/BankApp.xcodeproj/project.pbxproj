@@ -18,6 +18,12 @@
 		48BC844A29DED9AF00E84288 /* TransactionsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BC844929DED9AF00E84288 /* TransactionsRouter.swift */; };
 		48BC844C29DEDA4A00E84288 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BC844B29DEDA4A00E84288 /* Constants.swift */; };
 		48BC844E29DEDCE700E84288 /* TransactionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BC844D29DEDCE700E84288 /* TransactionRepository.swift */; };
+		48BC845029DEDD9400E84288 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BC844F29DEDD9400E84288 /* Transaction.swift */; };
+		48BC845229DEE00000E84288 /* TransactionsGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BC845129DEE00000E84288 /* TransactionsGateway.swift */; };
+		48BC845529DEE0A600E84288 /* GetTransactionsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BC845429DEE0A600E84288 /* GetTransactionsUseCase.swift */; };
+		48BC845729DEE0F400E84288 /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BC845629DEE0F400E84288 /* UseCase.swift */; };
+		48BC845929DEE11400E84288 /* Handler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BC845829DEE11400E84288 /* Handler.swift */; };
+		48BC845B29DEE1DD00E84288 /* TransactionsUseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BC845A29DEE1DD00E84288 /* TransactionsUseCaseFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +59,12 @@
 		48BC844929DED9AF00E84288 /* TransactionsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsRouter.swift; sourceTree = "<group>"; };
 		48BC844B29DEDA4A00E84288 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		48BC844D29DEDCE700E84288 /* TransactionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRepository.swift; sourceTree = "<group>"; };
+		48BC844F29DEDD9400E84288 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		48BC845129DEE00000E84288 /* TransactionsGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsGateway.swift; sourceTree = "<group>"; };
+		48BC845429DEE0A600E84288 /* GetTransactionsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTransactionsUseCase.swift; sourceTree = "<group>"; };
+		48BC845629DEE0F400E84288 /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
+		48BC845829DEE11400E84288 /* Handler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Handler.swift; sourceTree = "<group>"; };
+		48BC845A29DEE1DD00E84288 /* TransactionsUseCaseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsUseCaseFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,11 +161,12 @@
 		489742E229DB4C6000BFC6FF /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				489742ED29DB4D6900BFC6FF /* Entities */,
+				489742ED29DB4D6900BFC6FF /* Model */,
 				489742EC29DB4D4E00BFC6FF /* Gateways */,
-				489742EB29DB4D4800BFC6FF /* IO */,
 				489742EA29DB4D3C00BFC6FF /* UseCaseFactories */,
 				489742E929DB4D3500BFC6FF /* UseCases */,
+				48BC845629DEE0F400E84288 /* UseCase.swift */,
+				48BC845829DEE11400E84288 /* Handler.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -212,6 +225,7 @@
 		489742E929DB4D3500BFC6FF /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				48BC845329DEE09000E84288 /* Transactions */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -219,29 +233,25 @@
 		489742EA29DB4D3C00BFC6FF /* UseCaseFactories */ = {
 			isa = PBXGroup;
 			children = (
+				48BC845A29DEE1DD00E84288 /* TransactionsUseCaseFactory.swift */,
 			);
 			path = UseCaseFactories;
-			sourceTree = "<group>";
-		};
-		489742EB29DB4D4800BFC6FF /* IO */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = IO;
 			sourceTree = "<group>";
 		};
 		489742EC29DB4D4E00BFC6FF /* Gateways */ = {
 			isa = PBXGroup;
 			children = (
+				48BC845129DEE00000E84288 /* TransactionsGateway.swift */,
 			);
 			path = Gateways;
 			sourceTree = "<group>";
 		};
-		489742ED29DB4D6900BFC6FF /* Entities */ = {
+		489742ED29DB4D6900BFC6FF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				48BC844F29DEDD9400E84288 /* Transaction.swift */,
 			);
-			path = Entities;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		48BC844629DED94800E84288 /* Transactions */ = {
@@ -249,6 +259,14 @@
 			children = (
 				48BC844729DED95E00E84288 /* TransactionsNetwork.swift */,
 				48BC844929DED9AF00E84288 /* TransactionsRouter.swift */,
+			);
+			path = Transactions;
+			sourceTree = "<group>";
+		};
+		48BC845329DEE09000E84288 /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				48BC845429DEE0A600E84288 /* GetTransactionsUseCase.swift */,
 			);
 			path = Transactions;
 			sourceTree = "<group>";
@@ -383,15 +401,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48BC845929DEE11400E84288 /* Handler.swift in Sources */,
 				489742B729DB4C0F00BFC6FF /* ContentView.swift in Sources */,
 				48BC844A29DED9AF00E84288 /* TransactionsRouter.swift in Sources */,
+				48BC845B29DEE1DD00E84288 /* TransactionsUseCaseFactory.swift in Sources */,
 				48BC844829DED95E00E84288 /* TransactionsNetwork.swift in Sources */,
 				48BC844129DED82600E84288 /* Endpoints.swift in Sources */,
+				48BC845029DEDD9400E84288 /* Transaction.swift in Sources */,
 				48BC844329DED86700E84288 /* NetworkCall.swift in Sources */,
+				48BC845729DEE0F400E84288 /* UseCase.swift in Sources */,
 				48BC844E29DEDCE700E84288 /* TransactionRepository.swift in Sources */,
 				489742B529DB4C0F00BFC6FF /* BankApp.swift in Sources */,
 				48BC844529DED87F00E84288 /* NetworkError.swift in Sources */,
+				48BC845529DEE0A600E84288 /* GetTransactionsUseCase.swift in Sources */,
 				48BC844C29DEDA4A00E84288 /* Constants.swift in Sources */,
+				48BC845229DEE00000E84288 /* TransactionsGateway.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -553,8 +577,8 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -563,10 +587,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = es.hecroge.BankApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -589,8 +615,8 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -599,10 +625,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = es.hecroge.BankApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
