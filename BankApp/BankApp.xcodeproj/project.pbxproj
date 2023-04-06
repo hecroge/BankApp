@@ -11,6 +11,13 @@
 		489742B729DB4C0F00BFC6FF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489742B629DB4C0F00BFC6FF /* ContentView.swift */; };
 		489742B929DB4C1100BFC6FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 489742B829DB4C1100BFC6FF /* Assets.xcassets */; };
 		489742BD29DB4C1100BFC6FF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 489742BC29DB4C1100BFC6FF /* Preview Assets.xcassets */; };
+		48BC844129DED82600E84288 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BC844029DED82600E84288 /* Endpoints.swift */; };
+		48BC844329DED86700E84288 /* NetworkCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BC844229DED86700E84288 /* NetworkCall.swift */; };
+		48BC844529DED87F00E84288 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BC844429DED87F00E84288 /* NetworkError.swift */; };
+		48BC844829DED95E00E84288 /* TransactionsNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BC844729DED95E00E84288 /* TransactionsNetwork.swift */; };
+		48BC844A29DED9AF00E84288 /* TransactionsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BC844929DED9AF00E84288 /* TransactionsRouter.swift */; };
+		48BC844C29DEDA4A00E84288 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BC844B29DEDA4A00E84288 /* Constants.swift */; };
+		48BC844E29DEDCE700E84288 /* TransactionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BC844D29DEDCE700E84288 /* TransactionRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +46,13 @@
 		489742BC29DB4C1100BFC6FF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		489742C229DB4C1200BFC6FF /* BankAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BankAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		489742CC29DB4C1200BFC6FF /* BankAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BankAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		48BC844029DED82600E84288 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		48BC844229DED86700E84288 /* NetworkCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCall.swift; sourceTree = "<group>"; };
+		48BC844429DED87F00E84288 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		48BC844729DED95E00E84288 /* TransactionsNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsNetwork.swift; sourceTree = "<group>"; };
+		48BC844929DED9AF00E84288 /* TransactionsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsRouter.swift; sourceTree = "<group>"; };
+		48BC844B29DEDA4A00E84288 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		48BC844D29DEDCE700E84288 /* TransactionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +124,7 @@
 			children = (
 				489742BA29DB4C1100BFC6FF /* BankApp.entitlements */,
 				489742B829DB4C1100BFC6FF /* Assets.xcassets */,
+				48BC844B29DEDA4A00E84288 /* Constants.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -178,6 +193,7 @@
 		489742E729DB4D1B00BFC6FF /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				48BC844D29DEDCE700E84288 /* TransactionRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -185,6 +201,10 @@
 		489742E829DB4D2200BFC6FF /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				48BC844029DED82600E84288 /* Endpoints.swift */,
+				48BC844229DED86700E84288 /* NetworkCall.swift */,
+				48BC844429DED87F00E84288 /* NetworkError.swift */,
+				48BC844629DED94800E84288 /* Transactions */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -222,6 +242,15 @@
 			children = (
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		48BC844629DED94800E84288 /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				48BC844729DED95E00E84288 /* TransactionsNetwork.swift */,
+				48BC844929DED9AF00E84288 /* TransactionsRouter.swift */,
+			);
+			path = Transactions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,7 +384,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				489742B729DB4C0F00BFC6FF /* ContentView.swift in Sources */,
+				48BC844A29DED9AF00E84288 /* TransactionsRouter.swift in Sources */,
+				48BC844829DED95E00E84288 /* TransactionsNetwork.swift in Sources */,
+				48BC844129DED82600E84288 /* Endpoints.swift in Sources */,
+				48BC844329DED86700E84288 /* NetworkCall.swift in Sources */,
+				48BC844E29DEDCE700E84288 /* TransactionRepository.swift in Sources */,
 				489742B529DB4C0F00BFC6FF /* BankApp.swift in Sources */,
+				48BC844529DED87F00E84288 /* NetworkError.swift in Sources */,
+				48BC844C29DEDA4A00E84288 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
