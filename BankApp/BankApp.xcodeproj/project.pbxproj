@@ -27,6 +27,9 @@
 		48BC846029DEE44A00E84288 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BC845F29DEE44A00E84288 /* StringExtension.swift */; };
 		48BC846529DEE4A400E84288 /* TransactionsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BC846429DEE4A400E84288 /* TransactionsListView.swift */; };
 		48BC846729DEE4CE00E84288 /* TransactionsListConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BC846629DEE4CE00E84288 /* TransactionsListConnector.swift */; };
+		48BC846929E2062400E84288 /* TransactionsListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BC846829E2062400E84288 /* TransactionsListItemViewModel.swift */; };
+		48BC846B29E2A30100E84288 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 48BC846A29E2A30100E84288 /* Localizable.strings */; };
+		48BC846D29E331A500E84288 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BC846C29E331A500E84288 /* DateExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +74,9 @@
 		48BC845F29DEE44A00E84288 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		48BC846429DEE4A400E84288 /* TransactionsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsListView.swift; sourceTree = "<group>"; };
 		48BC846629DEE4CE00E84288 /* TransactionsListConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsListConnector.swift; sourceTree = "<group>"; };
+		48BC846829E2062400E84288 /* TransactionsListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsListItemViewModel.swift; sourceTree = "<group>"; };
+		48BC846A29E2A30100E84288 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		48BC846C29E331A500E84288 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +149,7 @@
 				489742BA29DB4C1100BFC6FF /* BankApp.entitlements */,
 				489742B829DB4C1100BFC6FF /* Assets.xcassets */,
 				48BC844B29DEDA4A00E84288 /* Constants.swift */,
+				48BC846A29E2A30100E84288 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -199,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				48BC845F29DEE44A00E84288 /* StringExtension.swift */,
+				48BC846C29E331A500E84288 /* DateExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -283,6 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				48BC845D29DEE3A200E84288 /* TransactionsListViewModel.swift */,
+				48BC846829E2062400E84288 /* TransactionsListItemViewModel.swift */,
 			);
 			path = Transactions;
 			sourceTree = "<group>";
@@ -417,6 +426,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				489742BD29DB4C1100BFC6FF /* Preview Assets.xcassets in Resources */,
+				48BC846B29E2A30100E84288 /* Localizable.strings in Resources */,
 				489742B929DB4C1100BFC6FF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -443,6 +453,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				48BC845929DEE11400E84288 /* Handler.swift in Sources */,
+				48BC846D29E331A500E84288 /* DateExtension.swift in Sources */,
+				48BC846929E2062400E84288 /* TransactionsListItemViewModel.swift in Sources */,
 				48BC844A29DED9AF00E84288 /* TransactionsRouter.swift in Sources */,
 				48BC845B29DEE1DD00E84288 /* TransactionsUseCaseFactory.swift in Sources */,
 				48BC844829DED95E00E84288 /* TransactionsNetwork.swift in Sources */,
@@ -607,7 +619,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = BankApp/BankApp.entitlements;
+				CODE_SIGN_ENTITLEMENTS = BankApp/Resources/BankApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BankApp/Preview Content\"";
@@ -645,7 +657,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = BankApp/BankApp.entitlements;
+				CODE_SIGN_ENTITLEMENTS = BankApp/Resources/BankApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BankApp/Preview Content\"";

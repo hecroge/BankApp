@@ -8,13 +8,54 @@
 import Foundation
 import Combine
 
-protocol TransactionsListViewModelOutput: ObservableObject {}
+protocol TransactionsListViewModelOutput: ObservableObject {
+    var transactions: [TransactionsListItemViewModel] { get set }
+    var firstTransaction: TransactionsListItemViewModel { get set }
+    func getTransactions()
+}
 
-protocol TransactionsListViewModelInput: ObservableObject {}
+protocol TransactionsListViewModelInput: ObservableObject {
+    func reverseTransactions()
+}
 
 protocol TransactionsListViewModelProtocol: TransactionsListViewModelOutput,
                                             TransactionsListViewModelInput {}
 
 class TransactionsListViewModel: TransactionsListViewModelProtocol {
-    
+    @Published var transactions: [TransactionsListItemViewModel] = []
+    @Published var firstTransaction: TransactionsListItemViewModel = TransactionsListItemViewModel()
+    private let useCaseFactory: TransactionsUseCaseFactory
+    private var useCase: UseCase?
+
+    // MARK: - Init
+    init(useCaseFactory: TransactionsUseCaseFactory) {
+        self.useCaseFactory = useCaseFactory
+    }
+
+    // MARK: - Input functions
+    func getTransactions() {
+        executeGetTransactionsUseCase()
+    }
+
+    // MARK: - Output functions
+    func reverseTransactions() {
+        transactions = transactions.reversed()
+    }
+
+    // MARK: - Private functions
+    private func executeGetTransactionsUseCase() {
+        useCase = useCaseFactory.getTransactions(handler: { result in
+            if case .success(let response) = result {
+                DispatchQueue.main.async {
+                    self.transactions = response.map { TransactionsListItemViewModel(transaction: $0) }
+                        .filter { $0.date != nil }
+                        .sorted(by: { $0.date ?? Date() > $1.date ?? Date() })
+
+                    self.firstTransaction = self.transactions[0]
+                }
+                self.useCase = nil
+            }
+        })
+        useCase?.execute()
+    }
 }
