@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 class TransactionsNetwork {
-    func getTransactions() -> AnyPublisher<Data, Error> {
+    func getTransactions() -> AnyPublisher<[Transaction], Error> {
         do {
             let url = try TransactionsRouter.getTransactions.urlRequest(baseURL: Constants.baseUrl)
             return URLSession.shared.dataTaskPublisher(for: url)
@@ -17,9 +17,10 @@ class TransactionsNetwork {
                 .mapError { (error: URLError) -> Error in
                     return error
                 }
+                .decode(type: [Transaction].self, decoder: JSONDecoder())
                 .eraseToAnyPublisher()
         } catch let error {
-            return Fail<Data, Error>(error: error).eraseToAnyPublisher()
+            return Fail<[Transaction], Error>(error: error).eraseToAnyPublisher()
         }
     }
 }

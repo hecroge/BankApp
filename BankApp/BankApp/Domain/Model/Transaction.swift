@@ -11,6 +11,6 @@ struct Transaction: Decodable {
     let id: Int
     let date: String
     let amount: Double
-    let fee: Double
-    let description: String
+    let fee: Double?
+    let description: String?
 }

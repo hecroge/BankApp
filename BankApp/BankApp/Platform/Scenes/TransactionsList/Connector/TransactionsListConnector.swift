@@ -15,6 +15,9 @@ final class TransactionsListConnector: TransactionsListConnectorProtocol {
 
     // MARK: - Dependency injection
     func assembleModule() -> some View {
-        return AnyView(EmptyView())
+        let gateway = TransactionRepository(network: TransactionsNetwork())
+        let useCaseFactory = TransactionsUseCaseFactory(gateway: gateway)
+        let viewModel = TransactionsListViewModel(useCaseFactory: useCaseFactory)
+        return AnyView(TransactionsListView(viewModel: viewModel, connector: self))
     }
 }
