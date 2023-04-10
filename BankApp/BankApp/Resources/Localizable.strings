@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  BankApp
+
+  Created by Héctor Rogel on 9/4/23.
+  
+*/
+
+"Nav_Title" = "BankApp";
+"Last_Transaction_Text" = "Last transaction";
+"All_Transactions_Text" = "All transactions";
