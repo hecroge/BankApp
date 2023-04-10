@@ -13,10 +13,6 @@ struct TransactionsListItemViewModel: Identifiable, Hashable, Equatable {
     var amount: Double = 0.0
     var description: String = ""
     var date: Date?
-
-    static func == (left: TransactionsListItemViewModel, right: TransactionsListItemViewModel) -> Bool {
-        return left.id == right.id
-    }
 }
 
 extension TransactionsListItemViewModel {

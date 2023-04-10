@@ -23,16 +23,11 @@ extension TransactionRepository: TransactionsGateway {
     func getTransaction() -> AnyPublisher<[Transaction], TransactionsGatewayError> {
         Future<[Transaction], TransactionsGatewayError> { [weak self] promise in
             self?.cancellable = self?.network.getTransactions().sink(receiveCompletion: { completion in
-                if case .failure(let error) = completion {
+                if case .failure = completion {
                     return promise(.failure(.unaccessible))
                 }
             }, receiveValue: { result in
-//                do {
-//                    let response: [Transaction] = try JSONDecoder().decode([Transaction].self, from: result)
-                    return promise(.success(result))
-//                } catch {
-//                    return promise(.failure(.decodingError))
-//                }
+                return promise(.success(result))
             })
         }.eraseToAnyPublisher()
     }
