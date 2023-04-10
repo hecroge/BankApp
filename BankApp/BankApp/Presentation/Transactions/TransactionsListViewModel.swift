@@ -47,9 +47,11 @@ class TransactionsListViewModel: TransactionsListViewModelProtocol {
         useCase = useCaseFactory.getTransactions(handler: { result in
             if case .success(let response) = result {
                 DispatchQueue.main.async {
-                    self.transactions = response.map { TransactionsListItemViewModel(transaction: $0) }
+                    let noDuplicates = response.map { TransactionsListItemViewModel(transaction: $0) }
                         .filter { $0.date != nil }
-                        .sorted(by: { $0.date ?? Date() > $1.date ?? Date() })
+                    self.transactions = Array(Dictionary(noDuplicates.map { ($0.id, $0) },
+                                          uniquingKeysWith: { $0.date ?? Date() > $1.date ?? Date() ? $0 : $1 }).values)
+                    .sorted(by: { $0.date ?? Date() > $1.date ?? Date() })
 
                     self.firstTransaction = self.transactions[0]
                 }
